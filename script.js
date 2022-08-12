@@ -1,3 +1,5 @@
+import { createStore } from "Redux"
+
 // initial state
 const initialState = {
     value: 0,
@@ -20,3 +22,6 @@ function counterReducer(state = initialState, action) {
             return state
     }
 }
+
+// create store
+const store = createStore(counterReducer)

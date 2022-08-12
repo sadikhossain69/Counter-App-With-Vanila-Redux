@@ -9,6 +9,14 @@ const decrementEl = document.getElementById('decrement')
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 
+// dispatch action
+const incrementAction = {
+    type: INCREMENT,
+}
+const decrementAction = {
+    type: DECREMENT,
+}
+
 // initial state
 const initialState = {
     value: 0,

@@ -1,9 +1,13 @@
-import { createStore } from "Redux"
+// import { createStore } from "Redux"
 
 // select dom elements
 const counterEl = document.getElementById('counter')
 const incrementEl = document.getElementById('increment')
 const decrementEl = document.getElementById('decrement')
+
+// const variable
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
 
 // initial state
 const initialState = {
@@ -29,4 +33,4 @@ function counterReducer(state = initialState, action) {
 }
 
 // create store
-const store = createStore(counterReducer)
+const store = Redux.createStore(counterReducer)

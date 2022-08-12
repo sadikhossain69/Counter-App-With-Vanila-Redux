@@ -1,5 +1,10 @@
 import { createStore } from "Redux"
 
+// select dom elements
+const counterEl = document.getElementById('counter')
+const incrementEl = document.getElementById('increment')
+const decrementEl = document.getElementById('decrement')
+
 // initial state
 const initialState = {
     value: 0,

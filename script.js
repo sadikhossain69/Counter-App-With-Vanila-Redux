@@ -10,11 +10,17 @@ const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 
 // dispatch action
-const incrementAction = {
-    type: INCREMENT,
+const incrementAction = (value) => {
+    return {
+        type: INCREMENT,
+        payload: value,
+    }
 }
-const decrementAction = {
-    type: DECREMENT,
+const decrementAction = (value) => {
+    return {
+        type: DECREMENT,
+        payload: value,
+    }
 }
 
 // initial state
@@ -28,12 +34,12 @@ function counterReducer(state = initialState, action) {
         case 'INCREMENT':
             return {
                 ...state,
-                value: state.value + 1,
+                value: state.value + action.payload,
             }
         case 'DECREMENT':
             return {
                 ...state,
-                value: state.value - 1,
+                value: state.value - action.payload,
             }
         default:
             return state
@@ -54,11 +60,11 @@ store.subscribe(render)
 
 // button click listeners
 incrementEl.addEventListener('click', () => {
-    store.dispatch(incrementAction)
+    store.dispatch(incrementAction(10))
     // render()
-} )
+})
 
 decrementEl.addEventListener('click', () => {
-    store.dispatch(decrementAction)
+    store.dispatch(decrementAction(5))
     // render()
-} )
+})
